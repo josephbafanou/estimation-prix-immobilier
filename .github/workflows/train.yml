@@ -1,0 +1,25 @@
+name: Entraînement
+
+on:
+  workflow_dispatch:
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m dvf.download
+      - run: python -m dvf.train
+      - run: cat reports/metrics.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: modele-et-metriques
+          path: |
+            models/model.joblib
+            reports/metrics.json
