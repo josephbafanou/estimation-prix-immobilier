@@ -2,7 +2,7 @@
 
 Modèle de **machine learning** qui estime le prix de vente d'un appartement ou d'une maison à partir des transactions réelles des **Demandes de Valeurs Foncières (DVF)**, publiées en open data par l'État. Le modèle est exposé via une **API FastAPI**.
 
-![CI](https://github.com/JODoomsdaY/dvf-prix-immobilier/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/JODoomsdaY/estimation-prix-immobilier/actions/workflows/ci.yml/badge.svg)
 
 **Périmètre :** Paris (75), Seine-et-Marne (77), Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94) · ventes 2024–2025.
 
@@ -39,8 +39,8 @@ Les métriques sont régénérées dans `reports/metrics.json` à chaque entraî
 ## Lancer le projet
 
 ```bash
-git clone https://github.com/JODoomsdaY/dvf-prix-immobilier.git
-cd dvf-prix-immobilier
+git clone https://github.com/JODoomsdaY/estimation-prix-immobilier.git
+cd estimation-prix-immobilier
 pip install -r requirements.txt
 export PYTHONPATH=src          # Windows : set PYTHONPATH=src
 
