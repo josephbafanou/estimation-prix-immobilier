@@ -25,12 +25,16 @@ DVF (data.gouv.fr) ─► download.py ─► clean.py ─► train.py ─► mod
 
 ## Résultats
 
-Les métriques sont générées dans `reports/metrics.json` à chaque entraînement.
+Entraînement sur **48 511 ventes** après nettoyage (38 808 pour l'apprentissage, 9 703 pour le test), lancé via le workflow GitHub Actions *Entraînement*.
 
 | Modèle | MAE | MAPE | R² |
 |---|---|---|---|
-| Référence (prix médian au m²) | *à venir* | | |
-| Gradient Boosting | *à venir* | | |
+| Référence (prix médian au m² × surface) | 178 956 € | 60,9 % | 0,21 |
+| **Gradient Boosting** | **67 997 €** | **21,9 %** | **0,79** |
+
+Le modèle divise l'erreur moyenne par **2,6** par rapport à la référence, et l'erreur relative passe de 61 % à 22 %.
+
+Les métriques sont régénérées dans `reports/metrics.json` à chaque entraînement.
 
 ## Lancer le projet
 
